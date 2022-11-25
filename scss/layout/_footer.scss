@@ -1,0 +1,108 @@
+%flex-layout{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+@mixin flex-layout-comp-sm{
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-container {
+    background-color: $secondary-bg;
+    border-top: 1px solid #d2d2d2;
+    // display: -webkit-box;
+    display: -ms-flexbox;
+    @extend %flex-layout;
+    padding: 35px 50px 30px;
+    width: 100%;
+    font-size: .85rem;
+    
+    .ft-row{
+        @extend %flex-layout;
+    }
+    .logo-footer{
+        height: 0;
+        font-size: 22px;
+    }
+    
+    .ft-row-child{
+        
+        a{
+            color: $primary-black;
+            text-decoration: underline;
+        }
+    }
+    .ft-links-lg{
+        display: none;
+    }
+    .ft-links-sm{
+        @extend %flex-layout;
+        max-width: 50%;
+    }
+    .ft-ad img{
+        width: 60px;
+    }
+    .reverse{
+        align-items: flex-start;
+        flex-direction: column-reverse;
+    }
+    .ft-links{
+        font-weight: 600;
+    }
+    .ft-social-links li {
+        display: inline-block;
+        margin-top: 0px;
+        padding-right: 18px;
+    }
+    .ft-social-icon{
+        color: black;
+        height: 20px;
+        opacity: .7;
+        transition: opacity .2s ease-in-out;
+        &:hover{
+            opacity: 1;
+        }
+    }
+}
+
+@include md{
+    .footer-container {
+        .ft-row{
+            @include flex-layout-comp-sm;
+        }
+        .ft-links-lg{
+            display: block;
+            & *{
+                margin-left: 10px;
+            }
+        }
+        .ft-about-poth{
+            width: 50%;
+        }
+        .ft-links-sm{
+            display: none;
+        }
+        .reverse{
+            @include flex-layout-comp-sm;
+        }
+        .ft-social-links li {
+            margin-top: 0;
+            padding-right: 0;
+            padding-left: 18px;
+        }
+    }
+}
+@include xs{
+    .footer-container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.footer-container-course{
+    background-color: $primary-white;
+    border-top: none;
+}
+

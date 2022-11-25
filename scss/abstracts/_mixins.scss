@@ -1,0 +1,66 @@
+// @mixin flex-center($directionY,$directionX) {
+//     display: flex;
+//     align-items: $directionY;
+//     justify-content: $directionX;
+// }
+// @mixin pseudo-after() {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+// .navigation{
+//     @include flex-center();
+// }
+@mixin flex-layout($align, $justify){
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin grid($columns){
+    display: grid;
+    grid-template-columns: $columns;
+}
+
+@mixin underline-active{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2.5px;
+    background-color: lighten($primary-black, 40%);
+}
+
+// breakpoints
+$breakpoints: (
+    "xs": 0,
+    "sm": 576px,
+    "md": 768px,
+    "lg": 992px,
+    "xl": 1200px,
+);
+@mixin xs {
+    @media (min-width: map-get($breakpoints, "xs")){
+        @content;
+    }
+}
+@mixin sm {
+    @media (min-width: map-get($breakpoints, "sm")){
+        @content;
+    }
+}
+@mixin md {
+    @media (min-width: map-get($breakpoints, "md")){
+        @content;
+    }
+}
+@mixin lg {
+    @media (min-width: map-get($breakpoints, "lg")){
+        @content;
+    }
+}
+@mixin xl {
+    @media (min-width: map-get($breakpoints, "xl")){
+        @content;
+    }
+}

@@ -1,0 +1,97 @@
+
+
+.logo-written{
+    text-align: center;
+    width: auto;
+    height: 3rem;
+    display: inline-table;
+    font-size: 40px;
+    font-family: alinur;
+    margin-bottom: 4px;
+    color: #333;
+    border-radius: 2px;
+    transition: .5s;
+}
+
+
+.navbar-container{
+    @include flex-layout(center, space-between);
+    min-height: 60px;
+    padding: .5rem 1rem;
+    position: relative;
+    .logo img{
+            width: auto;
+            height: 3rem;
+    }
+    .nav{
+        display: none;
+    }
+    .menu{
+        ul{
+            @include flex-layout(center, space-around);
+            flex-direction: column;
+            min-height: 50vh;
+            position: absolute;
+            top: 50px;
+            right: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 5%;
+            background: $secondary-bg-light;
+            opacity: 0;
+            transform-origin: top right;
+            transform: scale(0);
+            transition: transform .3s ease-in-out, opacity .3s ease-in-out;
+            a{
+                font-weight: 500 !important;
+                color: $primary-white;
+                margin: 1rem;  
+                text-transform: uppercase;
+            }
+        }
+        .menu-items-open{
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    .menu-toggle{
+        padding: .5rem;
+        cursor: pointer;
+        & img{
+            width: auto;
+            height: 1.5rem;
+        }
+    }
+}
+
+
+@include md{
+    .navbar-container{
+    min-height: 70px;
+    padding: .5rem 1.5rem;
+    .nav{
+        display: block;
+        ul{
+            @include flex-layout(center, center);
+            a{
+                font-weight: 600 !important;
+                margin-left: 2.5rem;  
+                text-transform: uppercase;
+            }
+        }
+    }    
+    .menu{
+        display: none
+    }
+    .menu-toggle{
+        display: none;
+    }
+}
+}
+
+@include lg{
+    .navbar-container{
+        min-height: 80px;
+        padding: .5rem 3rem;
+    }
+}

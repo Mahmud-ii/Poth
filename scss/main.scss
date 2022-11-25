@@ -1,0 +1,29 @@
+@font-face {
+  font-family: alinur;
+  src: url(../font/AlinurKatha/Unicode/Li\ Alinur\ Katha\ Unicode.ttf);
+}
+
+@import
+  'abstracts/variables',
+  'abstracts/mixins';
+
+@import
+  'base/reset',
+  'base/typography';
+
+@import
+  'layout/navigation',
+  'layout/grid',
+  'layout/header',
+  'layout/banner',
+  'layout/footer';
+
+@import
+  'components/buttons',
+  'components/cards';
+
+@import
+  'pages/home',
+  'pages/about',
+  'pages/explore',
+  'pages/course';

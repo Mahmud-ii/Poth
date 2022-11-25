@@ -1,0 +1,24 @@
+// discover section
+
+.discover-challenges h2 {
+    margin-bottom: 1rem;
+}
+
+.discover-content{
+    background-color: $secondary-bg;
+    padding: 1.5rem;
+
+    & > p{
+        margin-bottom: 1rem;
+    }
+    .discover-items{
+
+        a{
+            color: $primary-black;
+            border: 1px solid #9c9d9e;
+            border-radius: 50px;
+            margin-bottom: 8px;
+            padding: .5rem 1rem;
+        }
+    }
+}

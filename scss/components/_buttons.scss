@@ -1,0 +1,44 @@
+%btn-global{
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    display: inline-block;
+    text-align: center;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    vertical-align: middle;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+@mixin btn-color($bg-color, $btn-text-color){
+    background-color: $bg-color;
+    color: $btn-text-color;
+}
+
+@mixin btn-size($font-size : 1rem,$font-weight: 400,$padding: 0.375rem 0.75rem){
+    font-size: $font-size;
+    font-weight: $font-weight;
+    padding: $padding;
+}
+
+.btn{
+    @extend %btn-global;
+}
+
+.btn-primary{
+    @include btn-color($primary-black, $primary-white);
+    @include btn-size();
+    &:hover{
+        background-color: lighten($primary-black, 10%);
+    }
+}
+
+.btn-secondary{
+    @include btn-color($secondary-bg-dark, $primary-black);
+    @include btn-size();
+    &:hover{
+        background-color: darken($secondary-bg-dark, 10%);
+    }
+}

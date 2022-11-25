@@ -1,0 +1,102 @@
+.about-nav{
+    border-bottom: 1px solid #d2d2d2;
+}
+.about-main{
+    background-color: $secondary-bg;
+}
+.page-container{
+    padding: 3.5rem 1.5rem;
+}
+
+.grid-about{
+    @include grid(repeat(12,minmax(0,1fr)));
+    justify-items: center;
+
+    & > *{
+        grid-column: span 12;
+        margin-bottom: 3rem;
+    }
+}
+
+@include md{
+    .grid-about > *{
+        grid-column: 3 / 11;
+    }
+}
+
+.about-container{
+    padding-bottom: 2rem;
+    .page-heading-title{
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+}
+
+.belief-header-title{
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin-bottom: 1.7rem;
+}
+
+.belief-title{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+
+.sm-grid{
+    @include grid(repeat(12,minmax(0,1fr)));
+    gap: 5px;
+
+    .belief-img{
+        height: auto;
+        max-width: 100%;
+        grid-column: span 2;
+        img{
+            height: 3.5rem;
+            width: 100%;
+        }
+    }
+    .belief-text{
+        grid-column: 3 / -1;
+    }
+}
+
+.overview{
+    @include grid(repeat(12,minmax(0,1fr)));
+    justify-items: center;
+
+    & > *{
+        grid-column: span 12;
+        padding: 1.5rem;
+        border-radius: .5rem;
+        background-color: $primary-white;
+
+        margin-bottom: 3rem;
+    }
+
+    h3{
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@include md{
+    .overview > *{
+        grid-column: 2 / 12;
+    }
+}
+
+.grid-contact, .contribute{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 550px;
+    text-align: center;
+}
+
+.grid-contact p a{
+    text-decoration: underline;
+    color: black;
+}
